@@ -9,4 +9,8 @@ Batch Normalization的作用有以下几点：1.降低模型的训练难度。Ba
 Batch Normalization包含了四个参数：mean，var，gamma和peta。其中gamma和peta为学习参数。每一个参数的长度等于神经元的数量或者通道的数量。  
 NOTE：在使用Batch Normalization的神经网络层中，其可以无需使用bias，因为该项会在归一化过程中被消去，而之后的peta会使用activation产生偏移。
 # Environment
+python 3.7    
+pytorch 1.5    
+torchvision 0.6    
+opencv 3.4 
 # Experiment
