@@ -20,5 +20,5 @@ opencv 3.4
 从上图可知，vgg11_bn的收敛速度和准确率均高于vgg11。这证明了batch normalization操作不仅能够提高模型的收敛速度，还可以起到了正则作用来约束网络。  
 # Conclusion  
 batch normalization另辟蹊径，从研究activation的分布来提高模型的性能，加快模型的收敛速度和降低模型的训练难度。除此，之外它还具备了正则的作用，使得模型的参数不至于偏向某一个样本。看过batch normalization的人肯定都会有一个疑问，那就是batch normalization分为标准化和线性变化两个部分。当gamma=var,而peta=mean时，那么这个线性变化相当于将activation的分布又拉回到了原来的状态，两者互相矛盾。原文的解释是，标准化会降低activation的表示能力，所以添加了后面的线性操作。若gamma=var,而peta=mean时，则这可以解释为模型认为当前的这个分布是最合适的。下面，我想从数学推论的角度来解释这个问题，  
-![image](formula_4.gif)  
+![image](image/formula_4.gif)  
 从上述公式中可知，经过标准化后，模型的线性变化能力会被减弱。所以作者在标准化之后添加了线性变化操作。其目的应该就是为了减弱标准化而导致的模型线性变化能力的减弱，即模型特征转化能力的减弱。
