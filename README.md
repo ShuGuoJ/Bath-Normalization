@@ -15,6 +15,6 @@ torchvision 0.6
 opencv 3.4 
 # Experiment
 为了验证batch normalization的性能，我使用cifar10来分别训练vg11和vgg11_bn。两次训练共享超参数值。vgg11和vgg11_bn的不同在于后者在每层卷积神经层的后面追加了一个batch normalization操作。两者的学习曲线和准确率分别如下图所示：  
-![image](image/vgg11.PNG)  
+![image](image/vgg11.jpg)  
 ![image](image/vgg11_bn.PNG)  
 从上图可知，vgg11_bn的收敛速度和准确率均高于vgg11。这证明了batch normalization操作不仅能够提高模型的收敛速度，还可以起到了正则作用来约束网络。
