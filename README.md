@@ -17,4 +17,6 @@ opencv 3.4
 为了验证batch normalization的性能，我使用cifar10来分别训练vg11和vgg11_bn。两次训练共享超参数值。vgg11和vgg11_bn的不同在于后者在每层卷积神经层的后面追加了一个batch normalization操作。两者的学习曲线和准确率分别如下图所示：  
 ![image](image/vgg11.jpg)  
 ![image](image/vgg11_bn.PNG)  
-从上图可知，vgg11_bn的收敛速度和准确率均高于vgg11。这证明了batch normalization操作不仅能够提高模型的收敛速度，还可以起到了正则作用来约束网络。
+从上图可知，vgg11_bn的收敛速度和准确率均高于vgg11。这证明了batch normalization操作不仅能够提高模型的收敛速度，还可以起到了正则作用来约束网络。  
+# Conclusion  
+batch normalization另辟蹊径，从研究activation的分布来提高模型的性能，加快模型的收敛速度和降低模型的训练难度。除此，之外它还具备了正则的作用，使得模型的参数不至于偏向某一个样本。看过batch normalization的人肯定都会有一个疑问，那就是batch normalization分为标准化和线性变化两个部分。当gamma=var,而peta=mean时，那么这个线性变化相当于将activation的分布又拉回到了原来的状态，两者互相矛盾。原文的解释是，标准化会降低activation的表示能力，所以添加了后面的线性操作。若gamma=var,而peta=mean时，则这可以解释为模型认为当前的这个分布是最合适的。下面，我想从数学推论的角度来解释这个问题，
