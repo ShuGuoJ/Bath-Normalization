@@ -8,3 +8,5 @@ Batch Normalization的作用有以下几点：1.降低模型的训练难度。Ba
 3.正则化模型。在训练的过程中，模型需要计算神经元在该batch的mean和var。这使得同一个batch的样本产生了一定的关联性。所以模型在训练过程中并不会产生一个偏向于某一个样本的weight。这种正则化方法不同于dropout。同时，在使用batchnorm的时候，我也可以减少loss function中正则化项的权重。  
 Batch Normalization包含了四个参数：mean，var，gamma和peta。其中gamma和peta为学习参数。每一个参数的长度等于神经元的数量或者通道的数量。  
 NOTE：在使用Batch Normalization的神经网络层中，其可以无需使用bias，因为该项会在归一化过程中被消去，而之后的peta会使用activation产生偏移。
+# Environment
+# Experiment
